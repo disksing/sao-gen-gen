@@ -120,7 +120,7 @@ var pageTpl = `<!DOCTYPE HTML>
     <title>{{.Title}} | 骚话生成器生成器</title>
   </head>
   <body style="height: 100%">
-    <div class="container" id="app">
+    <div class="container" id="app" style="min-height: 100%;">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">{{.Title}}</a>
         <div class="ml-auto">
