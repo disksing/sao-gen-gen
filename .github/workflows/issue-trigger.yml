@@ -1,0 +1,26 @@
+name: Issue Trigger Gengen
+
+on:
+  issues:
+    types: [opened, edited, deleted, closed, reopened, labeled, unlabeled]
+
+jobs:
+  Generate_Page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Go environment
+        uses: actions/setup-go@v2.1.3
+        with:
+          go-version: 1.15
+      - name: Run Gengen
+        run: go run gengen.go
+      - name: Push Pages
+        uses: actions-x/commit@v2
+        with:
+          email: i@disksing.com
+          name: GitHub Actions Autocommitter
+          branch: master
+          files: docs
+
