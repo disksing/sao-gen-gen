@@ -4,3 +4,7 @@
 
 ## 一些示例
 
+- [营销号生成器](http://disksing.com/sao-gen-gen/1)
+- [胡编生成器](http://disksing.com/sao-gen-gen/2)
+- [苏联笑话生成器](http://disksing.com/sao-gen-gen/3)
+
