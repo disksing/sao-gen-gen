@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>苏联笑话生成器 | 骚话生成器生成器</title>
+  </head>
+  <body style="height: 100%">
+    <div class="container" id="app" style="min-height: 100%;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">苏联笑话生成器</a>
+        <div class="ml-auto">
+          <a href="https://github.com/disksing/sao-gen-gen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            创建新的生成器
+          </a>
+        </div>
+      </nav>
+      <div class="row mx-0 mt-3" style="padding: 20px; padding-bottom: 100px;">
+        <form class="col-12">
+          <div class="form-group row" v-for="v in variables">
+            <label class="col-sm-3 col-form-label">{{ v.description }}</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" :placeholder="v.default" :key="v.id" v-model="v.value" />
+            </div>
+          </div>
+        </form>
+        <div class="col-12"><hr/></div>
+        <div class="row col-12 mx-0 mt-3">
+          <div class="ml-auto">
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="updateTpl">重新生成</button>
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="copy">复制至剪贴板</button>
+          </div>
+        </div>
+
+        <div class="row col-12 mx-0 mt-3">
+          <blockquote class="blockquote">
+            <p v-html="content"></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <footer style="margin-top: -100px; width: 100%; line-height: 50px; background-color: #f5f5f5; text-align: center;">
+      <div class="container">
+        <a class="text-muted" href="https://github.com/disksing/sao-gen-gen">骚话生成器生成器@GitHub</a>
+        <br/>
+        <span class="text-muted">QQ交流群：481269635</span>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+    <script>
+      var config = {"variables":[{"id":"event","description":"要讽刺的事情","default":"投票推行996"},{"id":"boss","description":"事情的提出人","default":"拼多多HR"},{"id":"target","description":"提出者声称这件事有助于","default":"得到福报"},{"id":"victim","description":"事件的受害者","default":"打工人"},{"id":"org","description":"事件发生的组织","default":"拼多多"}],"templates":{"main":["在{org}庆典的聚会上，一位35岁的{victim}高举着牌子，上面写着“感谢{event}赐予我的快乐的童年”。\r\n{boss}呵斥道，“你是在嘲讽{event}吗？{event}才实行了20年。”\r\n“确切地说，这正是我感谢它的原因。”\r\n","{boss}发言道：“从下个礼拜开始我们要做两件事，一，全面在{org}实行{event}；二，周六所有{victim}都要去酒吧里拿一条蜥蜴。大家有什么意见可以提出来。”\r\n过了一会儿，台下有个声音怯生生地提问：“为什么要拿蜥蜴？”\r\n“很好，我就知道大家对{event}没有异议。”\r\n","“{event}真**的智障！”\r\n“你涉嫌恶意攻击{boss},跟我走一趟。”\r\n“我又没说是哪里的{event}！”\r\n“废话！哪里的{event}智障我会不知道吗！”\r\n","{boss}在向{victim}们讲话：\r\n“很快我们就能{target}！”\r\n台下传来一个声音：“那我们怎么办？”\r\n","一个{victim}的鹦鹉丢了。这是只会说话的鹦鹉，要是落到{boss}的手里可糟了。\r\n这人便发表了一篇声明：“本人遗失鹦鹉一只，另外，本人不同意它关于{event}的观点。”\r\n","“{event}是艺术还是科学?”\r\n”我说不好，但肯定不是科学。”\r\n“何以见得?”\r\n“如果{event}是科学的话，他们至少应该先用小白鼠做实验。”\r\n","大会主持人:”请支持{event}的人坐在左边，反对{event}的坐在右边。”\r\n大多数人坐在了右边，少数人坐在了左边，只有一个人坐在中间纹丝不动。\r\n主持人很不解，询问情况。\r\n“我对{victim}们的情况表示十分理解，但我支持{event}。”\r\n”那您赶快坐到主席台来。”主持人急忙说道。\r\n","{boss}关于“关爱{victim} 支持{event}”的会议纪要正在以超光速增长，但这并没有违背相对论，因为会议纪要里不含有任何信息。\r\n","{boss}:“我们要不惜一切代价，为了我们的主人翁{target}！”\r\n一个{victim}对另一个{victim}说:“看哪 ，{boss}把咱们当主人翁。”\r\n另一个{victim}说:“不，我们是‘代价’。”\r\n","“如果你在{org}，旁边一个陌生人突然开始唉声叹气，正确的做法是什么?”\r\n“立即阻止这种反对{event}的行为。”\r\n","{boss}:“由于{event}的实行，各位{victim}的美好未来前景已经出现在了地平线上。”\r\n一个{victim}问另一个{victim}:”什么是地平线?”\r\n另一个{victim}回答道:“就是那个能看到但是永远都到不了的线。”\r\n","{boss}在{org}随机采访了一位{victim}:“请问你对{event}有什么意见吗?”\r\n{victim}答道:“我有一些意见，但我不同意我的意见!”\r\n","两个骷髅相遇，一骷髅问另一个骷髅:“我是被{boss}的{event}逼死的，你是怎么死的？”\r\n另一个骷髅回答说:“我还活着。”\r\n","{boss}的汽车被一头牛挡住了，怎么也赶不走。{boss}便下车对牛说：“你再不走，我就把你送到{org}去{event}。”牛听了便一溜烟的跑开了。\r\n","问：“{event}在哪些时候会遇到抵制？”\r\n答：“主要有四个时间段：春天、夏天、秋天和冬天。”\r\n","{boss}问一名{victim}:“你的爸爸是谁？”\r\n他回答说：“是{boss}!”\r\n{boss}很满意，又问：“你的母亲是谁？”\r\n他回答：“是{event}！”\r\n{boss}又问：“你将来想当什么？”\r\n“孤儿！”\r\n","问：“什么是最短的笑话？”\r\n答：“{event}。”\r\n","问：“那些别有用心的人是怎样黑{event}的？”\r\n答：“他们把{boss}说的内容原文复述了。”\r\n","问：“为什么{boss}把{victim}放在中心考虑？”\r\n答：“这样从各个方向都能方便地欺压他们。”\r\n","问：“什么叫交换意见？”\r\n答：“带着你的意见去找{boss}理论，然后带着他的回来。”\r\n","问：“{event}实行的结果如何？”\r\n答：“还是有人活下来了。”\r\n","问：“{event}的前景是什么？”\r\n答：“有两种可能的情况。现实的可能是火星人会降临地球帮我们打理一切，科幻的可能是我们成功地{target}。”\r\n"]}};
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          variables: config.variables,
+          contentTpl: ""
+        },
+        created: function() {
+          this.updateTpl();
+        },
+        methods: {
+          updateTpl: function() {
+            var templates = config.templates;
+            for (k in templates) {
+              var contents = templates[k];
+              for (var i = contents.length-1; i > 0; i--) {
+                var j = Math.floor(Math.random() * i);
+                var tmp = contents[i];
+                contents[i] = contents[j];
+                contents[j] = tmp;
+              }
+            }
+
+            var index = {};
+            function expand(key, depth) {
+              if (depth >= 16) {
+                return "";
+              }
+
+              if (index[key] == null || index[key] >= templates[key].length) {
+                index[key] = 0;
+              }
+              var t = templates[key][index[key]];
+              index[key]++;
+
+              out: while (true) {
+                for (k in templates) {
+                  if (t.search('{'+k+'}') != -1) {
+                    t = t.replace('{'+k+'}', expand(k, depth+1));
+                    continue out;
+                  }
+                }
+                break;
+              };
+              return t;
+            }
+            this.contentTpl =  expand('main', 0);
+          },
+          getContent: function(ty) {
+            var t = this.contentTpl;
+            for (i in this.variables) {
+              var v = this.variables[i];
+              var s = v.default;
+              if (v.value != null && v.value.length > 0) {
+                s = v.value;
+              }
+              if (ty == "html") {
+                s = '<strong>'+s+'</strong>'
+              }
+              t = t.replaceAll('{'+v.id+'}', s);
+            }
+            if (ty == "html") {
+              t = t.replaceAll('\n', '<br/>');
+            }
+            return t;
+          },
+          copy: function() {
+            navigator.clipboard.writeText(this.getContent("plain")).then(function() {
+            }, function() {
+            });
+          }
+        },
+        computed: {
+          content: function() { return this.getContent("html"); }
+        }
+      });
+
+    </script>
+  </body>
+</html>
