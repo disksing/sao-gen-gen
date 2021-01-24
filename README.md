@@ -11,4 +11,4 @@
 ## 工作方式
 
 - [使用 GitHub Issue 提交生成器模板](https://github.com/disksing/sao-gen-gen/issues/new?labels=generator&template=generator.md)
-- GitHub Action 运行完毕后，访问 `https://disksing.com/san-gen-gen/{ISSUE_ID}`
+- GitHub Action 运行完毕后，访问 `https://disksing.com/sa-gen-gen/{ISSUE_ID}`
