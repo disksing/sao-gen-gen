@@ -2,7 +2,7 @@ name: Issue Trigger Gengen
 
 on:
   issues:
-    types: [opened, edited, deleted, closed, reopened, labeled, unlabeled]
+    types: [edited, deleted, closed, reopened, labeled, unlabeled]
 
 jobs:
   Generate_Page:
