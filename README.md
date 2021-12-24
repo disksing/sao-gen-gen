@@ -7,6 +7,11 @@
 - [营销号生成器](https://disksing.com/sao-gen-gen/1)
 - [胡编生成器](https://disksing.com/sao-gen-gen/2)
 - [苏联笑话生成器](https://disksing.com/sao-gen-gen/3)
+- [防沉迷公告生成器](https://disksing.com/sao-gen-gen/17)
+- [沉迷游戏新闻生成器](https://disksing.com/sao-gen-gen/18)
+- [快过年了](https://disksing.com/sao-gen-gen/23)
+- [有一点失望](https://disksing.com/sao-gen-gen/24)
+- [那种勃勃生机万物竞发的境界犹在眼前](https://disksing.com/sao-gen-gen/25)
 
 ## 工作方式
 
