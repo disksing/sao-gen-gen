@@ -37,5 +37,5 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            https://disksing.com/sao-gen-gen/${{ github.event.issue.number }}
+            已发布： https://disksing.com/sao-gen-gen/${{ github.event.issue.number }}
   
