@@ -17,7 +17,7 @@ jobs:
       - name: Run Gengen
         run: go run gengen.go
       - name: Push Pages
-        uses: actions-x/commit@v2.9
+        uses: github-actions-x/commit@v2.9
         with:
           email: i@disksing.com
           name: GitHub Actions Autocommitter
