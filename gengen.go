@@ -189,7 +189,8 @@ var pageTpl = `<!DOCTYPE HTML>
             const el = this.$refs.meme;
 
             const options = {
-              type: "dataURL"
+              type: "dataURL",
+              scrollY: -window.scrollY
             };
             const printCanvas = await html2canvas(el, options);
 
