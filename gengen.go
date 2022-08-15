@@ -150,7 +150,7 @@ var pageTpl = `<!DOCTYPE HTML>
           </div>
         </div>
 
-        <div class="row col-12 mx-0 mt-3 ref="meme">
+        <div class="row col-12 mx-0 mt-3" ref="meme">
           <blockquote class="blockquote">
             <p v-html="content"></p>
           </blockquote>
@@ -165,7 +165,7 @@ var pageTpl = `<!DOCTYPE HTML>
         <span class="text-muted">QQ交流群：481269635</span>
       </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
