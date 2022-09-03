@@ -34,6 +34,7 @@
             <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="updateTpl">重新生成</button>
             <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="copy">复制至剪贴板</button>
             <button type="button" class="btn btn-outline-primary mx-0 mr-0" @click.preventDefault="printThis">保存图片</button>
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" @click.preventDefault="shareTweet">分享至 Twitter</button>
           </div>
         </div>
 
@@ -92,6 +93,11 @@
             link.click();
 
             console.log("done");
+          },
+          shareTweet: function() {
+            const content = this.getContent("plain") + '\n' + '来自骚话生成器';
+            const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(content) + "&url=" + encodeURIComponent(window.location.href);
+            window.open(url, '_blank', 'width=615,height=505');
           },
           updateTpl: function() {
             var templates = config.templates;
