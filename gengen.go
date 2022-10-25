@@ -208,7 +208,7 @@ var pageTpl = `<!DOCTYPE HTML>
             console.log("done");
           },
           shareTweet: function() {
-            const content = this.getContent("plain") + '\\n' + '来自骚话生成器';
+            const content = this.getContent("plain") + '\n' + '来自骚话生成器';
             const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(content) + "&url=" + encodeURIComponent(window.location.href);
             window.open(url, '_blank', 'width=615,height=505');
           },
