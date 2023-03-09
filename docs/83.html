@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" style="height: 100%">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>少妇白洁生成器 | 骚话生成器生成器</title>
+  </head>
+  <body style="height: 100%">
+    <div class="container" id="app" style="min-height: 100%;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">少妇白洁生成器</a>
+        <div class="ml-auto">
+        <a href="https://github.com/disksing/sao-gen-gen/issues/new?labels=generator&template=generator.md" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </svg>
+            创建新的生成器
+          </a>
+        </div>
+      </nav>
+      <div class="row mx-0 mt-3" style="padding: 20px; padding-bottom: 100px;">
+        <form class="col-12">
+          <div class="form-group row" v-for="v in variables">
+            <label class="col-sm-3 col-form-label">{{ v.description }}</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" :placeholder="v.default" :key="v.id" v-model="v.value" />
+            </div>
+          </div>
+        </form>
+        <div class="col-12"><hr/></div>
+        <div class="row col-12 mx-0 mt-3">
+          <div class="ml-auto">
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="updateTpl">重新生成</button>
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" v-on:click="copy">复制至剪贴板</button>
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" @click.preventDefault="printThis">保存图片</button>
+            <button type="button" class="btn btn-outline-primary mx-0 mr-0" @click.preventDefault="shareTweet">分享至 Twitter</button>
+          </div>
+        </div>
+
+        <div class="row col-12 mx-0 mt-3" ref="meme">
+          <blockquote class="blockquote">
+            <p v-html="content"></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <footer style="margin-top: -100px; width: 100%; line-height: 50px; background-color: #f5f5f5; text-align: center;">
+      <div class="container">
+        <a class="text-muted" href="https://github.com/disksing/sao-gen-gen">骚话生成器生成器@GitHub</a>
+        <br/>
+        <span class="text-muted">QQ交流群：481269635</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+    <script>
+      var config = {"variables":[{"id":"female","description":"角色1","default":"白洁"},{"id":"male","description":"角色2","default":"东子"}],"templates":{"main":["当{female}柔柔的小手被{male}忽然握住，那种近乎挑逗的动作让{female}心里不由得阵阵发热。\r\n看{female}没有反对，{male}挪到了{female}的身边，拉着{female}的手微微一拉，{female}软软的身子就靠在了{male}身上。{male}右手搂在{female}乳房的下边，嘴从{female}的秀发吻过，吻到{female}的额头，{female}微微地仰起头，粉红柔软的嘴颤抖着上了{male}火热的嘴，仿佛两块磁石一样两人就吸在了一起。\r\n{female}的双手抬起来抱住了{male}的脖子，嘴纠在一起不断的摩擦，滑软跳动的舌尖在两人舌之间滑动，阵阵绵软的娇呻从两人紧紧贴在一起的嘴间飘出。\r\n两人搂在一起纠缠，{male}的手撩起{female}小衬衫的底襟，大手轻轻地摩挲着{female}光滑平坦的小腹，感受着{female}身体阵阵微微的颤动。\r\n{female}软软的身子侧靠在{male}身上，双手环抱着{male}的脖子，雪白的紧身小衬衫只有两个扣子还扣在一起，伴随着阵阵的呢喃和娇吟，{female}趁着浓浓的醉意完全沉浸在了和兴奋之中。\r\n{male}的手从{female}的前出来，手伸下去摸到了{female}柔软感的玲珑小脚，隔着滑滑软软的丝袜，顺着{female}的小腿慢慢向上滑动。\r\n","“{male}，我就要毕业了，我要是毕不了业，回家我怎么交待呀？”\r\n{female}声泪俱下的哭着，{male}却丝毫不为之所动，眼睛扫视着{female}薄薄的t恤下鼓鼓的乳房。“这可很难，我已经报到学校里了，除非……”{male}的手忽然从{female}的肩头滑落到了丰满的乳房上，{female}浑身一抖，“啊，你干什么？”{female}一下站了起来。\r\n“打开天窗说亮话，就是你让我玩一次，我马上再给你一张试卷，包你能毕业。”{male}色迷迷的还要去摸{female}的脸蛋。\r\n{female}脸一下红了“这……我……”\r\n“你要是敢就快点，我老婆一会儿就回来了，顶多还有四十分钟。怎样，行不行？”{male}很不耐烦的样子。\r\n{female}心都快跳出来了，哪里想到这个呀，动都不敢动。{male}一看{female}的样子，一把就抓住了{female}的胳膊把{female}搂在怀里，手顺势就握住了{female}那柔软又有着青春弹性的小巧乳房。\r\n{male}的手伸到了{female}的裙子里面，摸到了{female}光滑的长腿，{female}浑身发抖紧闭着眼睛，任由他乱摸。\r\n","夏夜的海风轻轻地拂过{female}秀美的脸庞，一个人坐在台阶上，眺望着远处黑沉沉的大海，{female}心里乱纷纷的，看着夜空中的点点繁星，{female}不知道哪一颗才是自己。\r\n\r\n{female}知道自己不爱{male}，可却对这个征服了自己肉体的男人有着奇怪的情感，每当{male}一触及自己的身上，碰到自己敏感的肌肤，就会有一种忍不住的冲动。\r\n\r\n{female}知道对不起自己的丈夫，可是{male}在自己全身上下的抚摸却不能勾起自己沸腾的情欲，丈夫在自己身上不停地起伏，有时候竟然会让自己有一丝的厌烦，{female}不知道自己是不是一个骨子里淫荡的人……\r\n","虽然晚上玩得很晚，很累，可{female}却没有一点困意， {female}想想昨晚的事情，脸都火热火热的发烧，暗暗告诫自己就这一次，下次可不能这么疯了，那{male}还是第一次见面呢，怎么就能做这种事情呢。\r\n\r\n可是{female}躺在那里，却怎么也睡不着，脑子里竟然都是和{male}一起放纵的影子和感觉，{female}侧过头看了看熟睡的丈夫，那一看就是知识分子的脸庞和经常戴眼镜凹下去眼睛，让{female}不由得叹了口气。可想想自己这么对不起丈夫，{female}心里真的很矛盾，以后会怎么样？{female}真的不知道，还能像以前一样的清纯吗？{female}不知道，也有点不敢去想……\r\n","飞驰的火车掠过一片片翠绿的大地，{female}一个人坐在靠窗边的小座位上，白白的小手托着腮帮看着两边不断闪过的村庄和城市，当铁路两边的垃圾越来越少的时候，城市和乡村的建筑风格也慢慢的有了变化，山东房屋高大的屋脊和院墙已经慢慢露出了端倪。\r\n\r\n{female}的思绪中却不断的闪现着各种各样的念头，不知道自己为什么这么不坚决，这么容易就被这些男人得到，看着这几个男人一个个陪着自己老婆的样子，{female}心里有一种很不是滋味的感觉，{female}知道这些男人很喜欢自己，可是好像喜欢的都是自己的身体，而自己永远也代替不了他们的家庭，他们的事业。\r\n\r\n抬眼看看{male}，这个不争气的老公，不知道为什么最近却越来越觉得{male}还是挺不错的，特别是对自己，真的是死心塌地的，而且是毫不保留的相信，可是连{female}自己都不知道以后会怎么样，会走到什么地步，{female}知道，自己真该对{male}好一点。\r\n","也许是最近和生活在一起的感觉很枯燥，也许是最近私下里的生活过于丰富多彩，也许是迷乱纷纭的生活让{female}有一种迷失的感觉，当{male}出现的时候，{female}的心里出现了一种很难形容的感觉，{female}心中最钦佩和爱慕的就是这种自强不息、敢闯敢拼的男人，这种成熟充满了一种让人迷失的魅力的男人，但已为人妇的自己且还是{male}的嫂子，已经无法去表达甚至不能在心里真的形成一种爱的感觉，只能让一种迷乱在心里荡漾，急于去发泄心中的欲望和感情。在这个不知道叫什么，甚至没怎么看清长得什么样的男人面前，{female}真正的放荡了一次，任意的寻找着自己的感觉和欲望，而没有什么负担和拖累。\r\n\r\n去爱，去忘记，继续迷失，{female}不知道自己该拥有什么？也许只有{male}才是她身边实实在在的存在。\r\n"]}};
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+          variables: config.variables,
+          contentTpl: ""
+        },
+        created: function() {
+          this.updateTpl();
+        },
+        methods: {
+          async printThis() {
+            console.log("printing..");
+            const el = this.$refs.meme;
+
+            const options = {
+              type: "dataURL",
+              scrollY: -window.scrollY
+            };
+            const printCanvas = await html2canvas(el, options);
+
+            const link = document.createElement("a");
+            link.setAttribute("download", "meme.png");
+            link.setAttribute(
+              "href",
+              printCanvas
+                .toDataURL("image/png")
+                .replace("image/png", "image/octet-stream")
+            );
+            link.click();
+
+            console.log("done");
+          },
+          shareTweet: function() {
+            const content = this.getContent("plain") + '\n' + '来自骚话生成器';
+            const url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(content) + "&url=" + encodeURIComponent(window.location.href);
+            window.open(url, '_blank', 'width=615,height=505');
+          },
+          updateTpl: function() {
+            var templates = config.templates;
+            for (k in templates) {
+              var contents = templates[k];
+              for (var i = contents.length-1; i > 0; i--) {
+                var j = Math.floor(Math.random() * i);
+                var tmp = contents[i];
+                contents[i] = contents[j];
+                contents[j] = tmp;
+              }
+            }
+
+            var index = {};
+            function expand(key, depth) {
+              if (depth >= 16) {
+                return "";
+              }
+
+              if (index[key] == null || index[key] >= templates[key].length) {
+                index[key] = 0;
+              }
+              var t = templates[key][index[key]];
+              index[key]++;
+
+              out: while (true) {
+                for (k in templates) {
+                  if (t.search('{'+k+'}') != -1) {
+                    t = t.replace('{'+k+'}', expand(k, depth+1));
+                    continue out;
+                  }
+                }
+                break;
+              };
+              return t;
+            }
+            this.contentTpl = expand('main', 0);
+          },
+          getContent: function(ty) {
+            var t = this.contentTpl;
+            for (i in this.variables) {
+              var v = this.variables[i];
+              var s = v.default;
+              if (v.value != null && v.value.length > 0) {
+                s = v.value;
+              }
+              if (ty == "html") {
+                s = '<strong>'+s+'</strong>'
+              }
+              t = t.replaceAll('{'+v.id+'}', s);
+            }
+            if (ty == "html") {
+              t = t.replaceAll('\n', '<br/>');
+            }
+            return t;
+          },
+          copy: function() {
+            navigator.clipboard.writeText(this.getContent("plain")).then(function() {
+            }, function() {
+            });
+          }
+        },
+        computed: {
+          content: function() { return this.getContent("html"); }
+        }
+      });
+
+    </script>
+  </body>
+</html>
