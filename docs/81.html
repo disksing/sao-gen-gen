@@ -60,7 +60,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 
     <script>
-      var config = {"variables":[{"id":"character1","description":"主角1","default":"没头脑"},{"id":"character2","description":"主角2","default":"不高兴"}],"templates":{"main":["{p1}{p2}"],"p1":["{subject}{event}是怎么回事呢？","{subject}相信大家都很熟悉，但是{event}是怎么回事呢？"],"p2":["那么{subject}为什么会{event}，相信大家都很好奇。大家可能会感到很惊讶，{subject}怎么会{event}呢？但事实就是这样，小编也感到非常惊讶。那么这就是关于{subject}{event}的事情了，大家有没有觉得很神奇呢？\r\n看了今天的内容，大家有什么想法呢？欢迎在评论区告诉小编一起讨论哦。\r\n"]}};
+      var config = {"variables":[{"id":"character1","description":"主角1","default":"没头脑"},{"id":"character2","description":"主角2","default":"不高兴"}],"templates":{"main":["{p1}{p2}"],"p1":["{character1}{character2}是怎么回事呢？","{subject}相信大家都很熟悉，但是{event}是怎么回事呢？"],"p2":["那么{subject}为什么会{event}，相信大家都很好奇。大家可能会感到很惊讶，{subject}怎么会{event}呢？但事实就是这样，小编也感到非常惊讶。那么这就是关于{subject}{event}的事情了，大家有没有觉得很神奇呢？\r\n看了今天的内容，大家有什么想法呢？欢迎在评论区告诉小编一起讨论哦。\r\n"]}};
 
       var app = new Vue({
         el: "#app",
